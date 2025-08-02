@@ -523,7 +523,7 @@ ${mrfrank}\n
 
 
             //================== AUTO REACT ==============
-const newsletterJids = [
+/*const newsletterJids = [
     "120363304325601080@newsletter"
 ];
 const emojis = ["❤️", "🔥", "😯"];
@@ -540,8 +540,44 @@ if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
         console.error("Error reacting to channel message:", e);
     }
 }
-        }
+ }
+*/
+const newsletterJids = [
+  "120363304325601080@newsletter",
+  "120363354023106228@newsletter",
+  "120363420122180789@newsletter",	  
+  "120363304325601080@newsletter"
+];
+  const emojis = ["❤️", "👍", "😮", "😎", "💀"];
 
+  if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
+    try {
+      const serverId = mek.newsletterServerId;
+      if (serverId) {
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        await conn.newsletterReactMessage(mek.key.remoteJid, serverId.toString(), emoji);
+      }
+    } catch (e) {
+    
+    }
+  }
+
+
+
+		
+  const emojis = ["❤️", "👍", "😮", "😎", "💀"];
+
+  if (mek.key && newsletterJids.includes(mek.key.remoteJid)) {
+    try {
+      const serverId = mek.newsletterServerId;
+      if (serverId) {
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        await conn.newsletterReactMessage(mek.key.remoteJid, serverId.toString(), emoji);
+      }
+    } catch (e) {
+    
+    }
+  }
             
         if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REACT === "true") {
             const jawadlike = await conn.decodeJid(conn.user.id);
