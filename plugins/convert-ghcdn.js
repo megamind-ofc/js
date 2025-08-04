@@ -7,7 +7,7 @@ const { cmd } = require('../command');
 
 // Configuration
 const CDN_CONFIG = {
-  BASE_URL: 'https://cdn-mrfrank.onrender.com',
+  BASE_URL: 'https://mrfrxnk-cdn.hf.space',
   API_KEY: 'subzero', // Change this to your preferred key
   DEFAULT_PATH: 'media/'
 };
