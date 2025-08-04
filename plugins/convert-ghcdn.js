@@ -1,4 +1,4 @@
-/*const axios = require('axios');
+const axios = require('axios');
 const FormData = require('form-data');
 const fs = require('fs');
 const os = require('os');
@@ -58,7 +58,7 @@ function formatResponse(title, name, size, path, url) {
 
 // Command handler
 cmd({
-    pattern: 'gitcdn',
+    pattern: 'cdn',
     alias: ['ghupload', 'cdnup'],
     react: '🔒',
     desc: 'Secure upload to GitHub CDN',
@@ -112,8 +112,8 @@ cmd({
         cleanTempFile(tempFilePath);
     }
 });
-*/
 
+/*
 const axios = require('axios');
 const FormData = require('form-data');
 const fs = require('fs');
@@ -229,3 +229,4 @@ cmd({
         cleanTempFile(tempFilePath);
     }
 });
+*/
