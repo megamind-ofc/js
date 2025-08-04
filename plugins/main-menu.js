@@ -74,22 +74,7 @@ const subzero = {
     }
   }
 };
-      const ice = {
-  key: {
-    remoteJid: '120363025036063173@g.us',
-    fromMe: false,
-    participant: '0@s.whatsapp.net'
-  },
-  message: {
-    groupInviteMessage: {
-      groupJid: '120363025036063173@g.us',
-      inviteCode: 'ABCD1234',
-      groupName: 'WhatsApp ✅ • Group',
-      caption: 'Subzero Smart Project',
-      jpegThumbnail: null
-    }
-  }
-      }
+      
 
         let dec = `
 
@@ -469,7 +454,7 @@ ${readMore}
                     }
                 }
             },
-            { quoted: ice }
+            { quoted: mek }
         );
       
         /*
