@@ -179,24 +179,23 @@ cmd({
     react: '🔒',
     desc: 'Secure upload to GitHub CDN',
     category: 'utility',
-    use: '.gitcdn [reply to media] [filename]',
+    use: '.gitcdn [filename] (when replying to media)',
     filename: __filename
-}, async (client, message, args, { reply }) => {
+}, async (client, message, { args, reply, quoted }) => {
     let tempFilePath;
     try {
-        const quotedMsg = message.quoted || message;
-        const mimeType = (quotedMsg.msg || quotedMsg).mimetype || '';
+        const mimeType = (quoted?.msg || message.msg).mimetype || '';
         
         if (!mimeType) throw "Reply to media to upload";
 
-        const mediaBuffer = await quotedMsg.download();
+        const mediaBuffer = await (quoted || message).download();
         tempFilePath = path.join(os.tmpdir(), `cdn_secure_${Date.now()}`);
         fs.writeFileSync(tempFilePath, mediaBuffer);
 
         const extension = getExtension(mimeType);
-        // Use provided filename or generate a default one
-        const customName = args.join('_').trim() || `file_${Date.now()}`;
-        const fileName = `${customName}${extension}`;
+        // Improved filename handling
+        const customName = typeof args === 'string' ? args.trim().replace(/\s+/g, '_') : `file_${Date.now()}`;
+        const fileName = customName.endsWith(extension) ? customName : `${customName}${extension}`;
 
         const form = new FormData();
         form.append('file', fs.createReadStream(tempFilePath), fileName);
