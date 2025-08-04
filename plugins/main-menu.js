@@ -49,7 +49,7 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         // Show typing indicator
-        await conn.sendPresenceUpdate('composing', from);
+      //  await conn.sendPresenceUpdate('composing', from);
 
         // Fetch version dynamically from config.REPO's package.json
         const version = await getBotVersion();
