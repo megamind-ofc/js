@@ -9,7 +9,7 @@ const { cmd } = require('../command');
 const CDN_CONFIG = {
   BASE_URL: 'https://mrfrxnk-cdn.hf.space',
   API_KEY: 'subzero', // Change this to your preferred key
-  DEFAULT_PATH: 'media/'
+  DEFAULT_PATH: 'ice/'
 };
 
 // Helper functions
